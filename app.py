@@ -47,13 +47,7 @@ model_path = hf_hub_download(
     filename="predictive_maintenance_model.pkl"
 )
 
-model = joblib.load(model_path)
-
-    features = joblib.load(
-        "models/model_features.pkl"
-    )
-
-    return model, features
+return model, features
 
 
 @st.cache_data
