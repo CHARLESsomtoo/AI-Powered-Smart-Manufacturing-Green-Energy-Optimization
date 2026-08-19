@@ -40,9 +40,14 @@ def load_project_data():
 @st.cache_resource
 def load_model():
 
-    model = joblib.load(
-        "models/predictive_maintenance_model.pkl"
-    )
+   from huggingface_hub import hf_hub_download
+
+model_path = hf_hub_download(
+    repo_id="CS01/predictive-maintenance-model",
+    filename="predictive_maintenance_model.pkl"
+)
+
+model = joblib.load(model_path)
 
     features = joblib.load(
         "models/model_features.pkl"
