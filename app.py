@@ -43,7 +43,8 @@ def load_model():
 
     model_path = hf_hub_download(
         repo_id="CS01/predictive-maintenance-model",
-        filename="predictive_maintenance_model.pkl"
+        filename="predictive_maintenance_model.pkl",
+        repo_type="model"
     )
 
     model = joblib.load(model_path)
